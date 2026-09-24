@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Fundamental para móviles y tablets -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Actividad Método Científico - Drag & Drop</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ========================= -->
+    <!-- PANTALLA DE INICIO -->
+    <!-- ========================= -->
+
+    <section id="inicio" class="pantalla activa">
+
+        <h1>🔬 Método Científico: Identifica las partes</h1>
+
+        <p>Introduce tu nombre:</p>
+
+        <input
+            type="text"
+            id="nombreAlumno"
+            placeholder="Tu nombre o alias"
+        >
+
+        <p>Selecciona tu curso:</p>
+
+        <select id="cursoAlumno">
+            <option value="">Selecciona curso</option>
+            <option>2º ESO B</option>
+            <option>2º ESO D</option>
+        </select>
+
+        <p>Selecciona un caso para comenzar:</p>
+
+        <div id="lista-casos"></div>
+
+        <h3>🏅 Insignias conseguidas</h3>
+
+        <div id="insigniasPanel"></div>
+
+        <button
+            type="button"
+            onclick="exportarInsignias()"
+        >
+            📤 Exportar mis insignias
+        </button>
+
+        <footer id="autor">
+            © 2026 Samuel López Melián
+        </footer>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- ACTIVIDAD -->
+    <!-- ========================= -->
+
+    <section id="actividad" class="pantalla">
+
+        <h2 id="tituloCaso"></h2>
+
+        <p>
+            En ordenador puedes arrastrar cada etiqueta.
+            En móvil o tablet, toca una etiqueta y después toca
+            el fragmento correspondiente.
+        </p>
+
+        <p id="puntuacion">
+            Puntuación: 0
+        </p>
+
+        <button
+            type="button"
+            onclick="volverInicio()"
+        >
+            Volver al inicio
+        </button>
+
+
+        <div id="contenedor">
+
+            <!-- Fragmentos del caso -->
+
+            <div id="texto"></div>
+
+
+            <!-- Etiquetas -->
+
+            <div id="etiquetas">
+
+                <div
+                    class="etiqueta"
+                    draggable="true"
+                    data-etiqueta="observacion"
+                >
+                    Observación
+                </div>
+
+                <div
+                    class="etiqueta"
+                    draggable="true"
+                    data-etiqueta="hipotesis"
+                >
+                    Hipótesis
+                </div>
+
+                <div
+                    class="etiqueta"
+                    draggable="true"
+                    data-etiqueta="experimentacion"
+                >
+                    Experimentación
+                </div>
+
+                <div
+                    class="etiqueta"
+                    draggable="true"
+                    data-etiqueta="analisis"
+                >
+                    Análisis
+                </div>
+
+                <div
+                    class="etiqueta"
+                    draggable="true"
+                    data-etiqueta="conclusion"
+                >
+                    Conclusión
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Resultado del caso -->
+
+        <p id="resultado"></p>
+
+
+        <footer id="autor">
+            © 2026 Samuel López Melián
+        </footer>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- CERTIFICADO DE INSIGNIAS -->
+    <!-- ========================= -->
+
+    <div
+        id="exportarImagen"
+        class="certificado"
+    >
+
+        <div class="marco">
+
+            <h2 class="tituloCert">
+                🏅 Certificado de Insignias
+            </h2>
+
+            <p class="subCert">
+                Método Científico
+            </p>
+
+            <h3
+                id="expNombre"
+                class="nombreCert"
+            ></h3>
+
+            <h4
+                id="expCurso"
+                class="cursoCert"
+            ></h4>
+
+            <p class="textoInsignias">
+                <strong>Insignias conseguidas:</strong>
+            </p>
+
+            <div
+                id="expInsignias"
+                class="contenedorInsignias"
+            ></div>
+
+            <p class="firmaCert">
+                © 2026 Samuel López Melián
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- SCRIPTS -->
+    <!-- ========================= -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
